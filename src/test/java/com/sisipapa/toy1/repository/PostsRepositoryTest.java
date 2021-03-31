@@ -15,22 +15,21 @@ public class PostsRepositoryTest {
     PostsRepository postsRepository;
 
     @AfterEach
-    public void cleanup() { // 데이터 섞임 방지
+    public void cleanup() {
         postsRepository.deleteAll();
     }
     @Test
     public void test1() {
-        // given
-        String title = "Test title";
-        String content = "Test content";
+        String title = "TITLE1";
+        String content = "CONTENT1";
+        String author = "AUTHOR1";
+
         postsRepository.save(Posts.builder()
                 .title(title)
                 .content(content)
-                .author("kim")
+                .author(author)
                 .build());
-        // when
         List<Posts> postsList = postsRepository.findAll();
-        // then
         Posts posts = postsList.get(0);
     }
 }
