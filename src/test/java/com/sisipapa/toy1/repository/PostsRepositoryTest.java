@@ -5,6 +5,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.Assert;
 
 import java.util.List;
 
@@ -14,10 +15,14 @@ public class PostsRepositoryTest {
     @Autowired
     PostsRepository postsRepository;
 
+    @Autowired
+    PostsQeuryDslRepository postsQueryDslRepository;
+
     @AfterEach
     public void cleanup() {
         postsRepository.deleteAll();
     }
+
     @Test
     public void test1() {
         String title = "TITLE1";
@@ -29,7 +34,11 @@ public class PostsRepositoryTest {
                 .content(content)
                 .author(author)
                 .build());
-        List<Posts> postsList = postsRepository.findAll();
-        Posts posts = postsList.get(0);
     }
+
+    @Test
+    public void test2() {
+        Posts posts = postsQueryDslRepository.findByAuthor("AUTHOR1");
+    }
+
 }
