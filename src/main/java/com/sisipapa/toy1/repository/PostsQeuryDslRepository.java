@@ -21,6 +21,9 @@ public class PostsQeuryDslRepository {
      * @return
      */
     public Posts findByAuthor(String author){
+
+        queryFactory.update(posts);
+
         return queryFactory.selectFrom(posts)
                 .where(posts.author.eq(author))
                 .fetchOne();
@@ -35,6 +38,7 @@ public class PostsQeuryDslRepository {
         return queryFactory.select(
                 Projections.constructor(
                         PostsDTO.class,
+                        posts.id,
                         posts.title,
                         posts.author,
                         posts.content))
@@ -42,4 +46,5 @@ public class PostsQeuryDslRepository {
                 .where(posts.id.eq(id))
                 .fetchOne();
     }
+
 }

@@ -1,4 +1,30 @@
-GET http://localhost:8080/v1/post/5
+### 등록
+POST http://localhost:8080/v1/post
+Content-Type: application/json
+
+{
+  "author" : "AUTHOR20"
+  ,"title" : "TITLE20"
+  ,"content" : "CONTENT20"
+}
+
+### 조회
+GET http://localhost:8080/v1/post/33
 Accept: application/json
 
-###
+
+### 수정
+PUT http://localhost:8080/v1/post/33
+Content-Type: application/json
+
+{
+  "author" : "AUTHOR33-수정2"
+  ,"title" : "TITLE33-수정2"
+  ,"content" : "CONTENT33-수정2"
+}
+
+### 삭제
+DELETE http://localhost:8080/v1/post/33
+Content-Type: application/json
+
+
