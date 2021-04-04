@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @OpenAPIDefinition(
         info = @Info(title = "Posts API 명세서",
-                description = "API 명세서",
+                description = "Spring Boot를 이용한 Demo 웹 애플리케이션 API입니다.",
                 version = "v1",
                 contact = @Contact(name = "sisipapa", email = "sisipapa239@gmail.com"),
                 license = @License(name = "Apache 2.0",

@@ -51,7 +51,11 @@ public class PostsService {
      * 삭제
      * @param id
      */
-    public void deletePost(Long id) {
+    public boolean deletePost(Long id) {
+
+        boolean result = true;
         repository.deleteById(id);
+        return result;
+
     }
 }

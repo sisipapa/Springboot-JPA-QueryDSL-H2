@@ -1,7 +1,9 @@
 package com.sisipapa.toy1.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
+@Schema(description = "Posts 결과 DTO")
 @Getter
 @Setter
 @NoArgsConstructor
