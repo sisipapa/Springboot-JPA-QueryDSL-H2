@@ -1,7 +1,9 @@
 package com.sisipapa.toy1.repository;
 
+import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.sisipapa.toy1.domain.Posts;
+import com.sisipapa.toy1.dto.PostsDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -13,9 +15,31 @@ public class PostsQeuryDslRepository {
 
     private final JPAQueryFactory queryFactory;
 
+    /**
+     * 단위테스트 조회
+     * @param author
+     * @return
+     */
     public Posts findByAuthor(String author){
         return queryFactory.selectFrom(posts)
                 .where(posts.author.eq(author))
+                .fetchOne();
+    }
+
+    /**
+     * REST API GET 단건 요청
+     * @param id
+     * @return
+     */
+    public PostsDTO findById(Long id){
+        return queryFactory.select(
+                Projections.constructor(
+                        PostsDTO.class,
+                        posts.title,
+                        posts.author,
+                        posts.content))
+                .from(posts)
+                .where(posts.id.eq(id))
                 .fetchOne();
     }
 }

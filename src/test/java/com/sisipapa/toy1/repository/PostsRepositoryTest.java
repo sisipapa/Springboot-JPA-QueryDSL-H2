@@ -2,6 +2,7 @@ package com.sisipapa.toy1.repository;
 
 import com.sisipapa.toy1.domain.Posts;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,13 +19,13 @@ public class PostsRepositoryTest {
     @Autowired
     PostsQeuryDslRepository postsQueryDslRepository;
 
-    @AfterEach
-    public void cleanup() {
-        postsRepository.deleteAll();
-    }
+//    @AfterEach
+//    public void cleanup() {
+//        postsRepository.deleteAll();
+//    }
 
     @Test
-    public void test1() {
+    public void save() {
         String title = "TITLE1";
         String content = "CONTENT1";
         String author = "AUTHOR1";
@@ -37,8 +38,10 @@ public class PostsRepositoryTest {
     }
 
     @Test
-    public void test2() {
+    public void findByAuthor() {
         Posts posts = postsQueryDslRepository.findByAuthor("AUTHOR1");
+        Assert.notNull(posts, "posts is not null");
+        Assertions.assertEquals(posts.getTitle(),"TITLE1");
     }
 
 }
