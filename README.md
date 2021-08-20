@@ -213,3 +213,5 @@ public class PostsController {
 ## 6. Swagger Doc 확인(http://localhost:8080/swagger-ui.html)
 
 <img src="https://sisipapa.github.io/assets/images/posts/2021-04-02-main.PNG" >
+
+[SISIPAPA 노트연결](https://sisipapa.github.io/blog/2021/04/02/Springboot-Document-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC1(Swagger)/)
