@@ -16,7 +16,7 @@ public class PostsQeuryDslRepository {
     private final JPAQueryFactory queryFactory;
 
     /**
-     * 단위테스트 조회-추가
+     * 단위테스트 조회
      * @param author
      * @return
      */
