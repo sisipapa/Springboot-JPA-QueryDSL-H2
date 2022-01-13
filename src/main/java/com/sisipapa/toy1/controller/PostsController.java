@@ -25,7 +25,7 @@ public class PostsController {
     private final PostsService service;
 
     /**
-     * 등록(Create)-1
+     * 등록(Create)-1-2
      * @param dto
      * @return
      */
