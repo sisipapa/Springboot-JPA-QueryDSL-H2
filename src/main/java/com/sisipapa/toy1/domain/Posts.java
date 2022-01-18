@@ -23,7 +23,7 @@ public class Posts {
     @Column(nullable = false)
     private String author;
 
-    @Builder // 빌더 패턴 클래스 생성, 생성자에 포함된 필드만 포함2
+    @Builder // 빌더 패턴 클래스 생성, 생성자에 포함된 필드만 포함3
     public Posts(Long id, String title, String content, String author) {
         this.id = id;
         this.title = title;
