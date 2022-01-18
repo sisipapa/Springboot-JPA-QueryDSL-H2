@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 public class Posts {
-    @Id // PK 필드1-1111222
+    @Id // PK 필드1-1111222333
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK 생성규칙
     private Long id;
 
